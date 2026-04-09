@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Socket.IO Test Client</title>
   <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+  <script src="main.js" defer></script>
   <style>
     body { font-family: Arial; margin: 20px; }
     #messages { list-style-type: none; margin: 0; padding: 0; height: 300px; overflow-y: scroll; border: 1px solid #ddd; padding: 10px; }
@@ -20,31 +21,8 @@
     <button>Send</button>
   </form>
 
-  <script>
-    const socket = io("https://krishna2-backend.onrender.com");
 
-    socket.on("connect", () => {
-      console.log("Connected to server!");
-    });
 
-    socket.on("receive_message", (data) => {
-      const item = document.createElement("li");
-      item.textContent = data;
-      messages.appendChild(item);
-      messages.scrollTop = messages.scrollHeight;
-    });
 
-    const form = document.getElementById("form");
-    const input = document.getElementById("input");
-    const messages = document.getElementById("messages");
-
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      if (input.value) {
-        socket.emit("send_message", input.value);   // Send message
-        input.value = "";
-      }
-    });
-  </script>
 </body>
 </html>
