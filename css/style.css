@@ -1,9 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
 
+
+body {
+  font-size: 100%;
+}
+
+
 .inner {
   width: 100%;
   border-top: 1px solid white;
   padding-inline: 5px;
+  padding-right: 40px;
 }
 
 .card {
@@ -13,6 +20,10 @@
   background-color: black;
   color: white;
   font-family: "Google Sans";
+}
+.card h2 {
+  font-size: 4em;
+  margin: 0;
 }
 
 .circle_button {
@@ -26,6 +37,7 @@
   height: 40px;
 
   font-size: xx-large;
+  margin-inline-end: 10px;
 }
 .bg-green {
   background-color: green;
